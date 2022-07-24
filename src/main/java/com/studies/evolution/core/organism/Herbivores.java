@@ -1,25 +1,26 @@
 package com.studies.evolution.core.body;
 
+import com.studies.evolution.core.positioning.Coordinate;
+import com.studies.evolution.core.positioning.PixelWithCoordinate;
+import com.studies.evolution.core.positioning.Pixel;
+import com.studies.evolution.core.positioning.World;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Worm implements Minion {
+public class Herbivores implements Organism {
 
     private static final List<PixelWithCoordinate> body = List.of(
-            new PixelWithCoordinate(new Pixel(255, 255, 0, 0), new Coordinate(-1, 0)),
-            new PixelWithCoordinate(new Pixel(255, 255, 0, 0), new Coordinate(-2, 0)),
-            new PixelWithCoordinate(new Pixel(255, 255, 0, 0), new Coordinate(-3, 0)),
-            new PixelWithCoordinate(new Pixel(255, 255, 0, 0), new Coordinate(-4, 0)),
-            new PixelWithCoordinate(new Pixel(255, 255, 0, 0), new Coordinate(-1, 2)),
-            new PixelWithCoordinate(new Pixel(255, 0, 255, 0), new Coordinate(-1, 1)),
-            new PixelWithCoordinate(new Pixel(255, 255, 255, 0), new Coordinate(-1, -1)),
-            new PixelWithCoordinate(new Pixel(255, 0, 255, 0), new Coordinate(0, 0)),
-            new PixelWithCoordinate(new Pixel(255, 255, 255, 0), new Coordinate(1, -1))
+            new PixelWithCoordinate(new Pixel(255, 0, 0, 255), new Coordinate(0, 0))
     );
 
     private List<Coordinate> cachePosition = null;
 
     private Coordinate position;
+
+    public Herbivores(int x, int y) {
+        this.position = new Coordinate(x, y);
+    }
 
     @Override
     public List<PixelWithCoordinate> getBody() {
@@ -27,7 +28,7 @@ public class Worm implements Minion {
     }
 
     @Override
-    public List<PixelWithCoordinate> getBodyPosition() {
+    public List<PixelWithCoordinate> getBodyInTheWorld() {
         List<PixelWithCoordinate> globalPosition = new ArrayList<>();
         cachePosition = new ArrayList<>();
 
@@ -45,7 +46,7 @@ public class Worm implements Minion {
     }
 
     @Override
-    public List<Coordinate> getBodyLastPosition() {
+    public List<Coordinate> getBodyOldPosition() {
         return cachePosition;
     }
 
@@ -55,7 +56,18 @@ public class Worm implements Minion {
     }
 
     @Override
-    public void setPosition(Coordinate position) {
-        this.position = position;
+    public void setPosition(int x, int y) {
+        this.position = new Coordinate(x, y);
+    }
+
+    @Override
+    public void process(World renderer) {
+        Coordinate coordinate = new Coordinate(
+                position.x() + (Math.random() % 2 == 0? 1 : -1),
+                position.y() + (Math.random() % 2 == 0? 1 : -1)
+        );
+
+        if(renderer.isFree(coordinate))
+            setPosition(coordinate.x(), coordinate.y());
     }
 }

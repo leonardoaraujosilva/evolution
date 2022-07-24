@@ -1,4 +1,4 @@
-package com.studies.evolution.core.body;
+package com.studies.evolution.core.positioning;
 
 public record Pixel(int alpha, int red, int green, int blue) {
 

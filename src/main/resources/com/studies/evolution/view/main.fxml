@@ -9,11 +9,11 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.studies.evolution.ui.MainController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.studies.evolution.controller.MainController">
    <center>
       <FlowPane fx:id="flpBackground" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #e8ebff;" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fx:id="imgWorld" fitHeight="372.0" fitWidth="600.0" onMouseDragged="#teste" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="imgWorld" fitHeight="372.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </FlowPane>
    </center>
@@ -45,7 +45,7 @@
             </HBox>
             <HBox alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="308.0" HBox.hgrow="ALWAYS">
                <children>
-                <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="22.0" maxWidth="22.0" minHeight="22.0" minWidth="22.0" mnemonicParsing="false" onAction="#reset" prefHeight="22.0" prefWidth="22.0" style="-fx-background-radius: 50%;" text="⟳" textAlignment="CENTER" textFill="#00b2a0">
+                <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="22.0" maxWidth="22.0" minHeight="22.0" minWidth="22.0" mnemonicParsing="false" onAction="#stop" prefHeight="22.0" prefWidth="22.0" style="-fx-background-radius: 50%;" text="⟳" textAlignment="CENTER" textFill="#00b2a0">
                      <HBox.margin>
                         <Insets right="10.0" />
                      </HBox.margin>
