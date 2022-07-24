@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.studies.evolution.ui.MainController">
    <center>
       <FlowPane fx:id="flpBackground" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #e8ebff;" BorderPane.alignment="CENTER">

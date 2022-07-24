@@ -24,6 +24,11 @@
             <artifactId>javafx-fxml</artifactId>
             <version>18.0.2</version>
         </dependency>
+        <dependency>
+            <groupId>com.studies</groupId>
+            <artifactId>evolution-core</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>
