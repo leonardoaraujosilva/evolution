@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.studies.evolution.ui.MainController">
+   <center>
+      <FlowPane fx:id="flpBackground" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #e8ebff;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="imgWorld" fitHeight="372.0" fitWidth="600.0" onMouseDragged="#teste" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </FlowPane>
+   </center>
+   <bottom>
+      <HBox alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="28.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" minWidth="300.0" prefWidth="300.0" style="-fx-pref-width: 50%;" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label text="generation:">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="lblGeneration" text="0">
+                     <HBox.margin>
+                        <Insets left="5.0" right="20.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="status:" />
+                  <Label fx:id="lblStatus" text="awaiting">
+                     <HBox.margin>
+                        <Insets left="5.0" right="20.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="308.0" HBox.hgrow="ALWAYS">
+               <children>
+                <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="22.0" maxWidth="22.0" minHeight="22.0" minWidth="22.0" mnemonicParsing="false" onAction="#reset" prefHeight="22.0" prefWidth="22.0" style="-fx-background-radius: 50%;" text="⟳" textAlignment="CENTER" textFill="#00b2a0">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="8.0" />
+                     </font>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="22.0" maxWidth="22.0" minHeight="22.0" minWidth="22.0" mnemonicParsing="false" onAction="#start" prefHeight="22.0" prefWidth="22.0" style="-fx-background-radius: 50%;" text="▶" textAlignment="CENTER" textFill="#00a824">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>
